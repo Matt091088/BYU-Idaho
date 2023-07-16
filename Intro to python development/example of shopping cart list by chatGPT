@@ -1,0 +1,54 @@
+class Shopping_Cart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self):
+        item_name = input("What item would you like to add? ")
+        item_price = float(input(f"What is the price of '{item_name}'? "))
+        self.items[item_name] = item_price
+        print(f"'{item_name}' has been added to the cart.")
+
+    def view_cart(self):
+        print("The contents of the shopping cart are:")
+        for index, item in enumerate(self.items.keys(), start=1):
+            print(f"{index}. {item} - ${self.items[item]:.2f}")
+
+    def remove_item(self):
+        index = int(input("Which item would you like to remove? ")) - 1
+        item_name = list(self.items.keys())[index]
+        del self.items[item_name]
+        print("Item removed.")
+
+    def compute_total(self):
+        total = sum(self.items.values())
+        print(f"The total price of the items in the shopping cart is ${total:.2f}")
+
+    def run(self):
+        print("Welcome to the Shopping Cart Program!")
+        while True:
+            print("\nPlease select one of the following:")
+            print("1. Add item")
+            print("2. View cart")
+            print("3. Remove item")
+            print("4. Compute total")
+            print("5. Quit")
+            choice = input("Please enter an action: ")
+
+            if choice == "1":
+                self.add_item()
+            elif choice == "2":
+                self.view_cart()
+            elif choice == "3":
+                self.remove_item()
+            elif choice == "4":
+                self.compute_total()
+            elif choice == "5":
+                print("Thank you. Goodbye.")
+                break
+            else:
+                print("Invalid choice. Please try again.")
+
+
+if __name__ == '__main__':
+    cart = Shopping_Cart()
+    cart.run()

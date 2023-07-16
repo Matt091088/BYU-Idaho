@@ -1,0 +1,48 @@
+import random
+
+# Define a list of possible secret words
+secret_words = ['nephi', 'lehi', 'alma', 'moroni', 'helaman', 'mosiah','programmer','byu','pathwayconnect', 'bookofmormon']
+
+# Choose a random secret word from the list
+secret_word = random.choice(secret_words)
+
+# Convert the secret word to lowercase
+secret_word = secret_word.lower()
+
+# Create a list of underscores to represent the unguessed letters
+word_in_progress = ['_'] * len(secret_word)
+
+# Keep track of the number of guesses
+num_guesses = 0
+
+# Loop until the word is guessed
+while True:
+    # Display the current state of the word and ask for a guess
+    print(f'\nYour hint is: {" ".join(word_in_progress)}')
+    guess = input('What is your guess? ').lower()
+
+    # Check if the guess is the correct length
+    if len(guess) != len(secret_word):
+        print('Sorry, the guess must have the same number of letters as the secret word.')
+        num_guesses += 1
+        continue
+
+    # Increment the number of guesses
+    num_guesses += 1
+
+    # Check if the guess is correct
+    if guess == secret_word:
+        print('Congratulations! You guessed it!')
+        print(f'It took you {num_guesses} guesses.')
+        break
+
+    # If the guess is incorrect, provide a hint
+    hint = []
+    for i in range(len(secret_word)):
+        if guess[i] == secret_word[i]:
+            hint.append(guess[i].upper())
+        elif guess[i] in secret_word:
+            hint.append(guess[i])
+        else:
+            hint.append('_')
+    print(f'Your hint is: {" ".join(hint)}')

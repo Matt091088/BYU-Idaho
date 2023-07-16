@@ -1,0 +1,13 @@
+friends = []
+
+newFriend = ""
+while newFriend != "end":
+    newFriend = input ("What is the name of your friend? ")
+    if newFriend != "end":
+        friends.append(newFriend)
+
+print()
+print("Your friends are: ")
+
+for friend in friends:
+    print (friend)
