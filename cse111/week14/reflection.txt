@@ -1,0 +1,20 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+This semester, while working on the budget project in Python, 
+I gained a better understanding of the importance of using functions to enhance code modularity and reusability. 
+By breaking the program into smaller functions, the different parts of the budgeting process, such as obtaining codes, calculations, and generating PDFs, became more efficient. 
+This allowed me to isolate issues and improve them more easily.
+
+
+2. In your judgment, what is the value of test functions?
+Test functions act as a safety net, allowing for quick identification and correction of errors. This is very helpful in detecting issues early in the development process.
+
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+I suppose the best way is to first identify the specific problem by examining error messages, 
+then use print statements to trace the program's execution flow, pinpoint the cause, 
+and also seek information or help from colleagues to find the best solution.
